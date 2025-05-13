@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import VisitorPopup from "./VisitorPopup";
-
+import del from "./assets/Trash.png";
 const FormSection = () => {
   const [formData, setFormData] = useState({
     mobile: "",
@@ -35,117 +35,160 @@ const FormSection = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md">
-      <h3 className="text-lg font-semibold mb-6">
+    <div className="bg-white rounded-xl p-6 ">
+      <h3 className="text-lg font-medium mb-6">
         Please fill in these details.
       </h3>
 
       <div className="grid grid-cols-3 gap-4 mb-4">
-        <input
-          type="text"
-          placeholder="Mobile Number"
-          className="input"
-          value={formData.mobile}
-          onChange={(e) => handleChange("mobile", e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="input"
-          value={formData.fullName}
-          onChange={(e) => handleChange("fullName", e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email ID"
-          className="input"
-          value={formData.email}
-          onChange={(e) => handleChange("email", e.target.value)}
-        />
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Mobile Number
+          </label>
+          <input
+            type="text"
+            className="input border border-gray-400 rounded-md"
+            value={formData.mobile}
+            onChange={(e) => handleChange("mobile", e.target.value)}
+          />
+        </div>
 
-        <select
-          className="input"
-          value={formData.purpose}
-          onChange={(e) => handleChange("purpose", e.target.value)}
-        >
-          <option value="">Purpose</option>
-          <option>Official Meeting</option>
-          <option>Personal Visit</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium mb-1">Full Name</label>
+          <input
+            type="text"
+            className="input border border-gray-400 rounded-md"
+            value={formData.fullName}
+            onChange={(e) => handleChange("fullName", e.target.value)}
+          />
+        </div>
 
-        <select
-          className="input"
-          value={formData.entryPoint}
-          onChange={(e) => handleChange("entryPoint", e.target.value)}
-        >
-          <option value="">Entry Point</option>
-          <option>Main Gate</option>
-          <option>Back Gate</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium mb-1">Email ID</label>
+          <input
+            type="email"
+            className="input border border-gray-400 rounded-md"
+            value={formData.email}
+            onChange={(e) => handleChange("email", e.target.value)}
+          />
+        </div>
 
-        <select
-          className="input"
-          value={formData.host}
-          onChange={(e) => handleChange("host", e.target.value)}
-        >
-          <option value="">Host</option>
-          <option>Akshay Kumar</option>
-          <option>Rahul Sharma</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium mb-1">Purpose</label>
+          <select
+            className="input  border border-gray-400 rounded-md"
+            value={formData.purpose}
+            onChange={(e) => handleChange("purpose", e.target.value)}
+          >
+            <option value=""></option>
+            <option>Official Meeting</option>
+            <option>Personal Visit</option>
+          </select>
+        </div>
 
-        <select
-          className="input"
-          value={formData.branch}
-          onChange={(e) => handleChange("branch", e.target.value)}
-        >
-          <option value="">Branch</option>
-          <option>HQ</option>
-          <option>Remote Office</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium mb-1">Entry Point</label>
+          <select
+            className="input  border border-gray-400 rounded-md"
+            value={formData.entryPoint}
+            onChange={(e) => handleChange("entryPoint", e.target.value)}
+          >
+            <option value=""></option>
+            <option>Main Gate</option>
+            <option>Back Gate</option>
+          </select>
+        </div>
 
-        <select
-          className="input"
-          value={formData.vehicle}
-          onChange={(e) => handleChange("vehicle", e.target.value)}
-        >
-          <option value="">Vehicle</option>
-          <option>Car</option>
-          <option>Bike</option>
-        </select>
+        <div>
+          <label className="block text-sm font-medium mb-1">Host</label>
+          <select
+            className="input  border border-gray-400 rounded-md"
+            value={formData.host}
+            onChange={(e) => handleChange("host", e.target.value)}
+          >
+            <option value=""></option>
+            <option>Akshay Kumar</option>
+            <option>Rahul Sharma</option>
+          </select>
+        </div>
 
-        <input
-          type="text"
-          placeholder="Vehicle Number"
-          className="input"
-          value={formData.vehicleNumber}
-          onChange={(e) => handleChange("vehicleNumber", e.target.value)}
-        />
-        <input
-          type="date"
-          className="input"
-          value={formData.date}
-          onChange={(e) => handleChange("date", e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Visit Day"
-          className="input"
-          value={formData.day}
-          onChange={(e) => handleChange("day", e.target.value)}
-        />
-        <input
-          type="time"
-          className="input"
-          value={formData.time}
-          onChange={(e) => handleChange("time", e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Meeting Room"
-          className="input"
-          value={formData.room}
-          onChange={(e) => handleChange("room", e.target.value)}
-        />
+        <div>
+          <label className="block text-sm font-medium mb-1">Branch</label>
+          <select
+            className=" input  border border-gray-400 rounded-md"
+            value={formData.branch}
+            onChange={(e) => handleChange("branch", e.target.value)}
+          >
+            <option value=""></option>
+            <option>HQ</option>
+            <option>Remote Office</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Vehicle</label>
+          <select
+            className="input  border border-gray-400 rounded-md"
+            value={formData.vehicle}
+            onChange={(e) => handleChange("vehicle", e.target.value)}
+          >
+            <option value=""></option>
+            <option>Car</option>
+            <option>Bike</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Vehicle Number
+          </label>
+          <input
+            type="text"
+            className="input  border border-gray-400 rounded-md"
+            value={formData.vehicleNumber}
+            onChange={(e) => handleChange("vehicleNumber", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Visit Date</label>
+          <input
+            type="date"
+            className="input  border border-gray-400 rounded-md"
+            value={formData.date}
+            onChange={(e) => handleChange("date", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Visit Day</label>
+          <input
+            type="text"
+            className=" input  border border-gray-400 rounded-md"
+            value={formData.day}
+            onChange={(e) => handleChange("day", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1"> Time</label>
+          <input
+            type="time"
+            className=" input  border border-gray-400 rounded-md"
+            value={formData.time}
+            onChange={(e) => handleChange("time", e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Meeting Room</label>
+          <input
+            type="text"
+            className=" input  border border-gray-400 rounded-md"
+            value={formData.room}
+            onChange={(e) => handleChange("room", e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="mb-4">
@@ -156,7 +199,7 @@ const FormSection = () => {
       </div>
 
       {rows.map((_, index) => (
-        <div key={index} className="grid grid-cols-4 gap-4 items-center mb-3">
+        <div key={index} className="grid grid-cols-5 gap-4 items-center mb-3">
           <input type="date" className="input" />
           <input type="text" placeholder="Visit Day" className="input" />
           <input type="time" className="input" />
@@ -165,9 +208,9 @@ const FormSection = () => {
             <button
               type="button"
               onClick={() => handleRemoveRow(index)}
-              className="text-red-500 text-sm"
+              className="bg-[#61B0D1] w-6 rounded-full"
             >
-              Remove
+              <img src={del} className="" />
             </button>
           )}
         </div>
@@ -183,18 +226,39 @@ const FormSection = () => {
 
       <div className="flex space-x-4">
         <button
-          className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition"
+          className="bg-[#61B0D1] w-64 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition"
           onClick={() => setShowModal(true)}
         >
           Invite
         </button>
-        <button className="bg-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-400 transition">
+        <button className="bg-[#61B0D1] w-64 text-white px-6 py-2 rounded-md hover:bg-gray-400 transition">
           Reset
         </button>
       </div>
 
       {showModal && (
-        <VisitorPopup data={formData} onClose={() => setShowModal(false)} />
+        <VisitorPopup
+          data={formData}
+          onClose={() => {
+            setShowModal(false);
+            setFormData({
+              mobile: "",
+              fullName: "",
+              email: "",
+              purpose: "",
+              entryPoint: "",
+              host: "",
+              branch: "",
+              vehicle: "",
+              vehicleNumber: "",
+              date: "",
+              day: "",
+              time: "",
+              room: "",
+            });
+            setRows([{ date: "", day: "", time: "", room: "" }]);
+          }}
+        />
       )}
     </div>
   );
